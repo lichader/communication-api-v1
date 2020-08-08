@@ -9,4 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreateCommunicationResponse {
     private String host;
+
+    private String version;
 }

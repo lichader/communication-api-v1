@@ -38,7 +38,7 @@ public class CommunicationsController {
 
         log.info(String.format(MESSAGE_TEMPLATE, data.getType(), data.getDestination(), data.getContent(), hosstname));
 
-        var response = new CreateCommunicationResponse(hosstname);
+        var response = new CreateCommunicationResponse(hosstname, "from v2");
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 
