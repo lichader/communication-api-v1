@@ -21,9 +21,9 @@ pipeline {
         stage('Publish') {
             agent any
             steps {
-                echo "Start publishing in {env.BUILD_ID}"
+                echo "Start publishing in ${env.BUILD_ID}"
                 script {
-                    def newImage = docker.build("lichader/communication-api-v1:{env.BUILD_ID}")
+                    def newImage = docker.build("lichader/communication-api-v1:${env.BUILD_ID}")
                     docker.withRegistry('', "dockerhub_id") {
                         newImage.push()
                     }
